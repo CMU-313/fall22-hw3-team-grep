@@ -52,6 +52,9 @@
                     <select class="form-control" name="type-{{ $index }}" ng-model="step.type" ng-change="updateTransitions(step)" required>
                       <option value="APPROVE">{{ 'settings.workflow.edit.type_approve' | translate }}</option>
                       <option value="VALIDATE">{{ 'settings.workflow.edit.type_validate' | translate }}</option>
+                      <!-- @OUTPUT: workflow.edit.step.type == RESUME -->
+                      <option value="RESUME">Resume Review</option>
+                      <!-- TODO: Add translation options, perhaps? -->
                     </select>
                   </div>
                 </div>
