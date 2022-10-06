@@ -111,6 +111,49 @@ public class DocumentDto {
      */
     private String highlight;
 
+    // Teedy changes for documents begin here 
+    // **************************************
+
+    private int gpaRating;
+
+    private int skillsRating;
+
+    private int expRating;
+
+    private String resumeComment;
+
+    public void setGPARating(int score) {
+        this.gpaRating = score;
+    }
+
+    public int getSkillsRating() {
+        return skillsRating;
+    }
+
+    public void setSkillsRating(int score) {
+        this.skillsRating = score;
+    }
+
+    public int getExpRating() {
+        return expRating;
+    }
+
+    public void setExpRating(int score) {
+        this.expRating = score;
+    }
+
+    public String getResumeCmnt() {
+        return resumeComment;
+    }
+
+    public void setResumeCmnt(String commentReview) {
+        this.resumeComment = commentReview;
+    }
+
+    // ********************************************
+    // Teedy document changes end here
+
+
     public String getId() {
         return id;
     }
