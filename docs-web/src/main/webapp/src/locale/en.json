@@ -341,8 +341,9 @@
         "type": "Step type",
         "type_approve": "Approve",
         "type_validate": "Validate",
+        "type_review": "Review",
         "target": "Assigned to",
-        "target_help": "<strong>Approve:</strong> Accept or reject the review<br/><strong>Validate:</strong> Review and continue the workflow",
+        "target_help": "<strong>Approve:</strong> Accept or reject the review<br/><strong>Validate:</strong> Review and continue the workflow<br/><strong>Review:</strong> Review and rate the document to continue the workflow",
         "add_step": "Add a workflow step",
         "actions": "What happens after?",
         "remove_action": "Remove action",
@@ -565,12 +566,14 @@
   },
   "workflow_type": {
     "VALIDATE": "Validation",
+    "REVIEW": "Review It",
     "APPROVE": "Approbation"
   },
   "workflow_transition": {
     "APPROVED": "Approved",
     "REJECTED": "Rejected",
-    "VALIDATED": "Validated"
+    "VALIDATED": "Validated",
+    "REVIEWED": "Reviewed"
   },
   "validation": {
     "required": "Required",
