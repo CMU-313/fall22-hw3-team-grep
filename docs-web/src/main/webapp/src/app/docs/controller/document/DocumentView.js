@@ -143,6 +143,29 @@ angular.module('docs').controller('DocumentView', function ($scope, $rootScope, 
   };
 
   /**
+     * Validate the Resume.
+     */
+  $scope.validateResume = function (transition) {
+    Restangular.one('route').post('validate', {
+      documentId: $stateParams.id,
+      transition: transition,
+      comment: $scope.workflowComment
+    }).then(function (data) {
+      $scope.workflowComment = '';
+      var title = $translate.instant('document.view.workflow_validated_title');
+      var msg = $translate.instant('document.view.workflow_validated_message');
+      var btns = [{result: 'ok', label: $translate.instant('ok'), cssClass: 'btn-primary'}];
+      $dialog.messageBox(title, msg, btns);
+
+      if (data.readable) {
+        $scope.document.route_step = data.route_step;
+      } else {
+        $state.go('document.default');
+      }
+    });
+  };
+
+  /**
    * Validate the workflow.
    */
   $scope.validateWorkflow = function (transition) {

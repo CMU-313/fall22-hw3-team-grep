@@ -141,24 +141,6 @@
               </textarea>
             </div>
 
-            <!-- I tried to mess with the md-slider described here https://material.angularjs.org/latest/demo/slider
-                  but it doesn't show up -->
-            <!-- <div layout>
-              <div flex="10" layout layout-align="center center">
-                <span class="md-body-1">mdSlider</span>
-              </div>
-              <md-slider flex md-discrete ng-model="rating1" step="1" min="1" max="5"
-                         aria-label="default"></md-slider>
-            </div> -->
-
-            <!-- Change .type to == RESUME when done -->
-            <span class="btn btn-primary"
-                  ng-show="document.route_step.type == 'VALIDATE'"
-                  ng-click="validateWorkflow('VALIDATED')">
-                  <!-- this also needs to change -->
-
-              Submit
-            </span>
 
             <span class="btn btn-primary"
                   ng-show="document.route_step.type == 'VALIDATE'"
@@ -170,10 +152,10 @@
                   ng-click="validateWorkflow('APPROVED')">
               {{ 'workflow_transition.APPROVED' | translate }}
             </span>
-            <span class="btn btn-success"
+            <span class="btn btn-primary"
                   ng-show="document.route_step.type == 'REVIEW'"
-                  ng-click="validateWorkflow('REVIEWED')">
-              {{ 'workflow_transition.REVIEWED' | translate }}
+                  ng-click="validateWorkflow('VALIDATED')">
+              {{ 'workflow_transition.VALIDATED' | translate }}
             </span>
             <span class="btn btn-danger"
                   ng-show="document.route_step.type == 'APPROVE'"
