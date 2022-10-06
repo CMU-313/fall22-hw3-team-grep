@@ -128,11 +128,11 @@
               </label>
               <label>
                 Skills
-                <input type="range" data-tooltip="true" step="1" data-step-labels="[1, 2, 3, 4, 5]" mobiscroll-slider ng-model="skillsRating">
+                <input type="range" data-tooltip="true" min="1" max="5" step="1" data-step-labels="[1, 2, 3, 4, 5]" mobiscroll-slider ng-model="skillsRating">
               </label>
               <label>
                 Experiences
-                <input type="range" data-tooltip="true" step="1" data-step-labels="[1, 2, 3, 4, 5]" mobiscroll-slider ng-model="expRating">
+                <input type="range" data-tooltip="true" min="1" max="5" step="1" data-step-labels="[1, 2, 3, 4, 5]" mobiscroll-slider ng-model="expRating">
               </label>
               <textarea 
                 ng-model="resumeComment" maxlength="1000" class="form-control mb-10"
@@ -142,13 +142,13 @@
 
             <!-- I tried to mess with the md-slider described here https://material.angularjs.org/latest/demo/slider
                   but it doesn't show up -->
-            <div layout>
+            <!-- <div layout>
               <div flex="10" layout layout-align="center center">
                 <span class="md-body-1">mdSlider</span>
               </div>
               <md-slider flex md-discrete ng-model="rating1" step="1" min="1" max="5"
                          aria-label="default"></md-slider>
-            </div>
+            </div> -->
 
             <!-- Change .type to == RESUME when done -->
             <span class="btn btn-primary"
