@@ -118,10 +118,10 @@
             
             <!-- @INPUT: document.route_step.type, validateWorkflow() -->
             <!-- @OUTPUT: document.view.gpaRating, .skillsRating, .expRating, .resumeComment -->
-            <div ng_show="document.route_step.type == 'VALIDATE">
+            <div ng_show="document.route_step.type == 'VALIDATE' ">
               <!-- Sliders Tutorial Found at https://docs.mobiscroll.com/angularjs/slider -->
               <!-- Slider JS powered by DocumentView.js -->
-
+              
               <label>
                 GPA
                 <!-- Nick: See if you can fix data-tooptip / data-step-labels, see the site on what they're supposed to do-->
@@ -154,7 +154,7 @@
             </span>
             <span class="btn btn-primary"
                   ng-show="document.route_step.type == 'REVIEW'"
-                  ng-click="validateWorkflow('VALIDATED')">
+                  ng-click="validateResumeWorkflow('VALIDATED')">
               {{ 'workflow_transition.VALIDATED' | translate }}
             </span>
             <span class="btn btn-danger"
