@@ -21,3 +21,4 @@ insert into T_USER(USE_ID_C, USE_IDROLE_C, USE_USERNAME_C, USE_PASSWORD_C, USE_E
 insert into T_USER_GROUP(UGP_ID_C, UGP_IDUSER_C, UGP_IDGROUP_C) values('dean5CMUAdmissions', 'dean5', 'CMUAdmissions');
 
 update T_CONFIG set CFG_VALUE_C = '28' where CFG_ID_C = 'DB_VERSION';
+
