@@ -106,6 +106,7 @@
           <p>
             <span class="fas fa-exchange-alt" ng-if="document.route_step.type == 'APPROVE'"></span>
             <span class="fas fa-check-circle" ng-if="document.route_step.type == 'VALIDATE'"></span>
+            <span class="fas fa-check-circle" ng-if="document.route_step.type == 'REVIEW'"></span>
             {{ 'workflow_type.' + document.route_step.type | translate }}
             <span class="label label-default"><acl data="document.route_step.target"></acl></span>
           </p>
@@ -121,6 +122,11 @@
                   ng-show="document.route_step.type == 'APPROVE'"
                   ng-click="validateWorkflow('APPROVED')">
               {{ 'workflow_transition.APPROVED' | translate }}
+            </span>
+            <span class="btn btn-success"
+                  ng-show="document.route_step.type == 'REVIEW'"
+                  ng-click="validateWorkflow('REVIEWED')">
+              {{ 'workflow_transition.REVIEWED' | translate }}
             </span>
             <span class="btn btn-danger"
                   ng-show="document.route_step.type == 'APPROVE'"
