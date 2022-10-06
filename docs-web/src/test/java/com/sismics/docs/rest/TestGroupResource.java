@@ -58,7 +58,7 @@ public class TestGroupResource extends BaseJerseyTest {
                 .cookie(TokenBasedSecurityFilter.COOKIE_NAME, adminToken)
                 .get(JsonObject.class);
         JsonArray groups = json.getJsonArray("groups");
-        Assert.assertEquals(7g, groups.size());
+        Assert.assertEquals(7, groups.size());
         JsonObject groupG11 = groups.getJsonObject(2);
         Assert.assertEquals("g11", groupG11.getString("name"));
         Assert.assertEquals("g1", groupG11.getString("parent"));
