@@ -113,6 +113,53 @@
           <p ng-show="document.route_step.transitionable">
             <textarea ng-model="workflowComment" maxlength="500" class="form-control mb-10"
                       ng-attr-placeholder="{{ 'document.view.workflow_comment' | translate }}"></textarea>
+            
+            <!-- Add information here for the RESUME REVIEW form. Change to == 'RESUME' when finished. -->
+            
+            <!-- @INPUT: document.route_step.type, validateWorkflow() -->
+            <!-- @OUTPUT: document.view.gpaRating, .skillsRating, .expRating, .resumeComment -->
+            <div ng_show="document.route_step.type == 'VALIDATE">
+              <!-- Sliders Tutorial Found at https://docs.mobiscroll.com/angularjs/slider -->
+              <!-- Slider JS powered by DocumentView.js -->
+
+              <label>
+                GPA
+                <!-- Nick: See if you can fix data-tooptip / data-step-labels, see the site on what they're supposed to do-->
+                <input type="range" data-tooltip="true" min="1" max="5" step="1" data-step-labels="[1, 2, 3, 4, 5]" mobiscroll-slider ng-model="gpaRating">
+              </label>
+              <label>
+                Skills
+                <input type="range" data-tooltip="true" step="1" data-step-labels="[1, 2, 3, 4, 5]" mobiscroll-slider ng-model="skillsRating">
+              </label>
+              <label>
+                Experiences
+                <input type="range" data-tooltip="true" step="1" data-step-labels="[1, 2, 3, 4, 5]" mobiscroll-slider ng-model="expRating">
+              </label>
+              <textarea 
+                ng-model="resumeComment" maxlength="1000" class="form-control mb-10"
+                ng-attr-placeholder="Please explain the rationale of your ratings.">
+              </textarea>
+            </div>
+
+            <!-- I tried to mess with the md-slider described here https://material.angularjs.org/latest/demo/slider
+                  but it doesn't show up -->
+            <div layout>
+              <div flex="10" layout layout-align="center center">
+                <span class="md-body-1">mdSlider</span>
+              </div>
+              <md-slider flex md-discrete ng-model="rating1" step="1" min="1" max="5"
+                         aria-label="default"></md-slider>
+            </div>
+
+            <!-- Change .type to == RESUME when done -->
+            <span class="btn btn-primary"
+                  ng-show="document.route_step.type == 'VALIDATE'"
+                  ng-click="validateWorkflow('VALIDATED')">
+                  <!-- this also needs to change -->
+
+              Submit
+            </span>
+
             <span class="btn btn-primary"
                   ng-show="document.route_step.type == 'VALIDATE'"
                   ng-click="validateWorkflow('VALIDATED')">
