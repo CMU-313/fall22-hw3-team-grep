@@ -147,10 +147,11 @@ angular.module('docs').controller('DocumentView', function ($scope, $rootScope, 
    */
   $scope.validateWorkflow = function (transition) {
     Restangular.one('route').post('validate', {
-      documentId: $stateParams.id,
+      documentId: $stateParams.id, 
       transition: transition,
       comment: $scope.workflowComment
-    }).then(function (data) {
+    }
+    ).then(function (data) {
       $scope.workflowComment = '';
       var title = $translate.instant('document.view.workflow_validated_title');
       var msg = $translate.instant('document.view.workflow_validated_message');
@@ -164,4 +165,12 @@ angular.module('docs').controller('DocumentView', function ($scope, $rootScope, 
       }
     });
   };
+
+  angular
+    .module('myModule',['mobiscroll-form']) // creating module and setting dependency
+    .controller('myController', ['$scope', function ($scope) {
+        $scope.gpaRating = 3;
+        $scope.skillsRating = 3;
+        $scope.expRating = 3;
+  }]);
 });

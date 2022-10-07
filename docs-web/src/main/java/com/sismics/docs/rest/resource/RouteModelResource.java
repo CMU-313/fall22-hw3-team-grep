@@ -210,6 +210,12 @@ public class RouteModelResource extends BaseResource {
                     transitionsNames.add(RouteStepTransition.APPROVED);
                     transitionsNames.add(RouteStepTransition.REJECTED);
                 }
+                else if (type == RouteStepType.REVIEW) {
+                    if (transitions.size() != 1) {
+                        throw new ClientException("ValidationError", "REVIEW steps should have one transition");
+                    }
+                    transitionsNames.add(RouteStepTransition.VALIDATED);
+                }
 
                 for (int j = 0; j < transitions.size(); j++) {
                     // Transition

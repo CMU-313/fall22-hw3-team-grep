@@ -149,6 +149,13 @@ angular.module('docs').controller('SettingsWorkflowEdit', function($scope, $dial
         actionType: 'ADD_TAG'
       }];
     }
+    else if (step.type === 'REVIEW') {
+      step.transitions = [{
+        name: 'REVIEWED',
+        actions: [],
+        actionType: 'ADD_TAG'
+      }];
+    }
   };
 
   /**

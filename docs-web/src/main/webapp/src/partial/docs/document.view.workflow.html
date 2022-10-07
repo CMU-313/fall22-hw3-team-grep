@@ -51,14 +51,16 @@
   </tr>
   </thead>
   <tbody>
+    <!-- We can piggyback off the same transition with RESUME, I'm pertty sure -->
+    <!-- @REQUIRED: step.transition needs to have value RESUME -->
   <tr ng-repeat="step in route.steps" ng-class="{
-          'bg-success': step.transition == 'VALIDATED' || step.transition == 'APPROVED' || step.transition == 'RESUME',
+          'bg-success': step.transition == 'VALIDATED' || step.transition == 'APPROVED' || step.transition == 'REVIEWED',
           'bg-danger': step.transition == 'REJECTED'
       }">
     <td>
       <span class="fas fa-exchange-alt" ng-if="step.type == 'APPROVE'"></span>
       <span class="fas fa-check-circle" ng-if="step.type == 'VALIDATE'"></span>
-      <span class="fas fa-solid fa-inbox-out" ng-if="step.type == 'RESUME'"></span>
+      <span class="fas fa-check-circle" ng-if="step.type == 'REVIEW'"></span>
       {{ 'workflow_type.' + step.type | translate }}
     </td>
     <td>{{ step.name }}</td>

@@ -118,7 +118,48 @@ public class Document implements Loggable {
      */
     @Column(name = "DOC_DELETEDATE_D")
     private Date deleteDate;
+
+    // Teedy changes for documents begin here 
+    // **************************************
+
+    @Column(name = "DOC_GPA_C", length = 36)
+    private int gpaRating;
+
+    @Column(name = "DOC_SKILLS_C", length = 36)
+    private int skillsRating;
+
+    // @Column(name = "DOC_EXP_C", length = 36)
+    // private int expRating;
+
     
+    public int getGPARating() {
+        return gpaRating;
+    }
+
+    public void setGPARating(int score) {
+        this.gpaRating = score;
+    }
+
+    public int getSkillsRating() {
+        return skillsRating;
+    }
+
+    public void setSkillsRating(int score) {
+        this.skillsRating = score;
+    }
+
+    // public int getExpRating() {
+    //     return expRating;
+    // }
+
+    // public void setExpRating(int score) {
+    //     this.expRating = score;
+    // }
+
+
+    // ********************************************
+    // Teedy document changes end here
+
     public String getId() {
         return id;
     }
