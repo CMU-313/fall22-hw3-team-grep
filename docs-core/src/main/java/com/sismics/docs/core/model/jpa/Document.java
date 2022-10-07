@@ -128,11 +128,9 @@ public class Document implements Loggable {
     @Column(name = "DOC_SKILLS_C", length = 36)
     private int skillsRating;
 
-    @Column(name = "DOC_EXP_C", length = 36)
-    private int expRating;
+    // @Column(name = "DOC_EXP_C", length = 36)
+    // private int expRating;
 
-    @Column(name = "DOC_RESUME_C", length = 4000)
-    private String resumeComment;
     
     public int getGPARating() {
         return gpaRating;
@@ -150,21 +148,14 @@ public class Document implements Loggable {
         this.skillsRating = score;
     }
 
-    public int getExpRating() {
-        return expRating;
-    }
+    // public int getExpRating() {
+    //     return expRating;
+    // }
 
-    public void setExpRating(int score) {
-        this.expRating = score;
-    }
+    // public void setExpRating(int score) {
+    //     this.expRating = score;
+    // }
 
-    public String getResumeCmnt() {
-        return resumeComment;
-    }
-
-    public void setResumeCmnt(String commentReview) {
-        this.resumeComment = commentReview;
-    }
 
     // ********************************************
     // Teedy document changes end here

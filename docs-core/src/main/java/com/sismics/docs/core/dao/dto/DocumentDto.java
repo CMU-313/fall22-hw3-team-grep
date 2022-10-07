@@ -118,9 +118,12 @@ public class DocumentDto {
 
     private int skillsRating;
 
-    private int expRating;
+    // private int expRating;
 
-    private String resumeComment;
+    public int getGPARating() {
+        return gpaRating;
+    }
+
 
     public void setGPARating(int score) {
         this.gpaRating = score;
@@ -134,21 +137,14 @@ public class DocumentDto {
         this.skillsRating = score;
     }
 
-    public int getExpRating() {
-        return expRating;
-    }
+    // public int getExpRating() {
+    //     return expRating;
+    // }
 
-    public void setExpRating(int score) {
-        this.expRating = score;
-    }
+    // public void setExpRating(int score) {
+    //     this.expRating = score;
+    // }
 
-    public String getResumeCmnt() {
-        return resumeComment;
-    }
-
-    public void setResumeCmnt(String commentReview) {
-        this.resumeComment = commentReview;
-    }
 
     // ********************************************
     // Teedy document changes end here

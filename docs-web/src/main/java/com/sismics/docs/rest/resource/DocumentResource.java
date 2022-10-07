@@ -175,7 +175,7 @@ public class DocumentResource extends BaseResource {
                 .add("shared", documentDto.getShared())
                 .add("file_count", documentDto.getFileCount())
                 .add("GPA", documentDto.getGPARating())
-                .add("experience_rating", documentDto.getExpRating())
+                // .add("experience_rating", documentDto.getExpRating())
                 .add("skills_rating", documentDto.getSkillsRating());
 
         List<TagDto> tagDtoList = null;
@@ -774,7 +774,7 @@ public class DocumentResource extends BaseResource {
         document.setRights(rights);
         document.setLanguage(language);
         document.setGPARating(0);
-        document.setExpRating(0);
+        // document.setExpRating(0);
         document.setSkillsRating(0);
 
         if (createDate == null) {
