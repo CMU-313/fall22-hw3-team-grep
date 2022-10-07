@@ -147,10 +147,11 @@ angular.module('docs').controller('DocumentView', function ($scope, $rootScope, 
    */
   $scope.validateWorkflow = function (transition) {
     Restangular.one('route').post('validate', {
-      documentId: $stateParams.id,
+      documentId: $stateParams.id, 
       transition: transition,
       comment: $scope.workflowComment
-    }).then(function (data) {
+    }
+    ).then(function (data) {
       $scope.workflowComment = '';
       var title = $translate.instant('document.view.workflow_validated_title');
       var msg = $translate.instant('document.view.workflow_validated_message');
