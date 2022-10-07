@@ -173,7 +173,10 @@ public class DocumentResource extends BaseResource {
                 .add("update_date", documentDto.getUpdateTimestamp())
                 .add("language", documentDto.getLanguage())
                 .add("shared", documentDto.getShared())
-                .add("file_count", documentDto.getFileCount());
+                .add("file_count", documentDto.getFileCount())
+                .add("GPA", documentDto.getGPARating())
+                // .add("experience_rating", documentDto.getExpRating())
+                .add("skills_rating", documentDto.getSkillsRating());
 
         List<TagDto> tagDtoList = null;
         if (principal.isAnonymous()) {
@@ -770,6 +773,10 @@ public class DocumentResource extends BaseResource {
         document.setCoverage(coverage);
         document.setRights(rights);
         document.setLanguage(language);
+        document.setGPARating(0);
+        // document.setExpRating(0);
+        document.setSkillsRating(0);
+
         if (createDate == null) {
             document.setCreateDate(new Date());
         } else {

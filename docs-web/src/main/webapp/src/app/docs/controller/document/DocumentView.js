@@ -147,10 +147,11 @@ angular.module('docs').controller('DocumentView', function ($scope, $rootScope, 
    */
   $scope.validateWorkflow = function (transition) {
     Restangular.one('route').post('validate', {
-      documentId: $stateParams.id,
+      documentId: $stateParams.id, 
       transition: transition,
       comment: $scope.workflowComment
-    }).then(function (data) {
+    }
+    ).then(function (data) {
       $scope.workflowComment = '';
       var title = $translate.instant('document.view.workflow_validated_title');
       var msg = $translate.instant('document.view.workflow_validated_message');
@@ -172,28 +173,4 @@ angular.module('docs').controller('DocumentView', function ($scope, $rootScope, 
         $scope.skillsRating = 3;
         $scope.expRating = 3;
   }]);
-
-  angular.module('sliderDemoBasic', ['ngMaterial'])
-  .config(function ($mdIconProvider) {
-    $mdIconProvider.iconSet('device', 'img/icons/sets/device-icons.svg', 24);
-  })
-  .controller('AppCtrl', function ($scope) {
-    $scope.color = {
-      red: Math.floor(Math.random() * 255),
-      green: Math.floor(Math.random() * 255),
-      blue: Math.floor(Math.random() * 255)
-    };
-
-    $scope.rating1 = 3;
-    $scope.rating2 = 2;
-    $scope.rating3 = 4;
-
-    $scope.disabled1 = Math.floor(Math.random() * 100);
-    $scope.disabled2 = 0;
-    $scope.disabled3 = 70;
-
-    $scope.invert = Math.floor(Math.random() * 100);
-
-    $scope.isDisabled = true;
-  });
 });
